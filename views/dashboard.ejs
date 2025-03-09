@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../style/dashboard.css" />
+    <script
+      src="https://kit.fontawesome.com/3f167df4c7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="background_container">
+      <div class="background_contain">
+        <div class="front-part">
+          <div class="foregrd_container">
+            <% if (posts && posts.length > 0) { %> <%
+            posts.forEach(function(post) { %>
+            <div class="note_box">
+              <div class="contain1">
+                <span id="bin">
+                  <!-- Update icon: note the added stopPropagation in JS -->
+                  <i
+                    class="fa-solid fa-pen-to-square update-btn"
+                    title="update"
+                    data-id="<%= post._id %>"
+                    data-title="<%= post.title %>"
+                    data-message="<%= post.message %>"
+                  ></i>
+                  <!-- Delete icon: same here -->
+                  <i
+                    class="fa-regular fa-trash-can delete-btn"
+                    title="delete"
+                    data-id="<%= post._id %>"
+                  ></i>
+                </span>
+                <h3><%= post.title %></h3>
+              </div>
+              <div class="contain2">
+                <p><%= post.message %></p>
+              </div>
+            </div>
+            <% }); %> <% } else { %>
+            <p>No posts available yet. Start adding some!</p>
+            <% } %>
+          </div>
+        </div>
+        <span id="pencil">
+          <i class="fa-solid fa-pencil"></i>
+        </span>
+
+        <div class="selfImg">
+          <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+        </div>
+
+      
+
+        <!-- Main Upload Form -->
+        <div class="uploadForm" style="display: none">
+          <form action="/upload" method="POST">
+            <div class="form-title">
+              <h1 id="form_title">Add Note</h1>
+              <span id="close"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <input
+              type="text"
+              name="title"
+              class="field"
+              id="text_field"
+              placeholder="Title"
+              required
+            /> 
+            <textarea
+              name="message"
+              id="textArea"
+              cols="30"
+              rows="6"
+              class="field"
+              placeholder="Message"
+              required
+            ></textarea>
+            <div class="form_div">
+              <button id="form_btn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Update Form -->
+        <div class="updateForm" style="display: none">
+          <form id="updateForm">
+            <div class="form-title">
+              <h1 id="form_title">Update Note</h1>
+              <span id="update_close"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <input type="hidden" id="update_id" />
+            <input
+              type="text"
+              id="update_title"
+              class="field"
+              placeholder="Title"
+              required
+            />
+            <textarea
+              id="update_message"
+              cols="30"
+              rows="6"
+              class="field"
+              placeholder="Message"
+              required
+            ></textarea>
+            <div class="form_div">
+              <button type="submit" id="update_btn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </form>
+        </div>
+
+        <!-- NEW: View Modal for Enlarged Task Details -->
+        <div class="viewModal" id="viewModal" style="display: none">
+          <div class="modalContent">
+            <div class="model-flex">
+              <h2 id="viewTitle"></h2>
+              <span class="closeView" id="closeView" style="cursor: pointer">&times;</span>
+            </div>
+            <hr class="hr" />
+            <p id="viewMessage"></p>
+            <div class="modal-actions">
+              <i class="fa-solid fa-pen-to-square update-btn" id="modalUpdateBtn" title="update"></i>
+              <i class="fa-regular fa-trash-can delete-btn" id="modalDeleteBtn" title="delete"></i>
+            </div>
+          </div>
+        </div>
+
+        <h1 id="main_tag">Docs.</h1>
+      </div>  
+    </div>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>

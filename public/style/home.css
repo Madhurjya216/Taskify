@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Cormorant", serif;
+}
+
+.container {
+  background-color: #252525;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.contain {
+  background: #000000;
+  padding: 40px;
+  border-radius: 40px;
+}
+
+.contain #logo {
+  width: 100px;
+}
+
+.contain h3 {
+  font-size: 40px;
+}
+
+.contain h5 {
+  font-size: 22px;
+  font-family: "Marcellus", serif;
+  margin: 10px 0;
+}
+.contain p {
+  font-size: 18px;
+  align-items: center;
+  display: flex;
+}
+
+.contain #google-icon {
+  width: 30px;
+}
+
+.google_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background: rgb(24, 24, 24);
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+.google_btn p img {
+  margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+  .contain {
+    width: 100%;
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .contain h3 {
+    font-size: 8vw;
+  }
+
+  .contain p {
+    font-size: 15px;
+  }
+
+  .contain h5 {
+    font-size: 4.5vw;
+  }
+
+  .contain #logo {
+    width: 22vw;
+  }
+}
