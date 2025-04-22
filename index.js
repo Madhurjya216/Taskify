@@ -29,11 +29,15 @@ mongoose
   .catch((err) => console.error(err));
 
 // Express Session middleware
+// Express Session middleware
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+    cookie: { 
+      maxAge: 2 * 24 * 60 * 60 * 1000 // 2 days in milliseconds
+    }
   })
 );
 
