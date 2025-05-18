@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Macondo&family=Marcellus&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Macondo&family=Marcellus&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 * {
   box-sizing: border-box;
@@ -146,7 +146,7 @@
 
 .contain2 {
   padding-bottom: 15px;
-  color: rgb(168, 168, 168)
+  color: rgb(168, 168, 168);
   /* Enable vertical scrolling */
 }
 
@@ -154,6 +154,7 @@
   font-size: 17px;
   display: inline-block;
   width: 80%;
+  font-family: "Nunito", sans-serif;
   /* Set your desired width */
   white-space: nowrap;
   /* Prevent text from wrapping */
@@ -166,9 +167,11 @@
 
 .contain2 p {
   font-size: 14px;
-  color: white;
+  color: rgb(194, 193, 193);
+  font-family: "Nunito", sans-serif;
   width: 100%;
   height: 100%;
+  font-weight: 500;
   background: #1c1c1c;
   white-space: pre-wrap;
 }
@@ -443,7 +446,7 @@
     right: 20px;
   }
 
-  .selfImg{
+  .selfImg {
     bottom: 75px;
     right: 20px;
   }
